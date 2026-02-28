@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常环保行动指南 | 微小改变，巨大影响</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 简单的滚动显现动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* 自定义绿色渐变，比默认emerald更柔和 */
+        .eco-gradient {
+            background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- 顶部导航 -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm border-b border-slate-200 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="font-bold text-lg text-slate-900">EcoAction</span>
+            </div>
+            <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-slate-100 transition" aria-label="切换深色模式">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <header class="pt-32 pb-20 px-4 eco-gradient text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                环境保护<br>
+                <span class="text-emerald-100">始于日常选择</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-emerald-50 mb-8 max-w-2xl mx-auto leading-relaxed">
+                不需要成为完美主义者。每一个微小的可持续选择，乘以70亿人口，就是改变世界的力量。
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#actions" class="bg-white text-emerald-700 px-8 py-3 rounded-full font-semibold hover:bg-emerald-50 transition shadow-lg">
+                    开始行动
+                </a>
+                <button onclick="showImpact()" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                    查看数据
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 关键数据卡片 -->
+    <section class="py-16 px-4 -mt-10">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 fade-in">
+                <div class="text-3xl mb-2">🌊</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">800万吨</h3>
+                <p class="text-slate-600 text-sm">每年流入海洋的塑料垃圾。一个可重复使用的杯子，每年可减少167个一次性杯子的使用。</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 fade-in" style="transition-delay: 100ms;">
+                <div class="text-3xl mb-2">🌡️</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">+1.1°C</h3>
+                <p class="text-slate-600 text-sm">全球平均气温已较工业化前上升。将空调调高1°C，可减排二氧化碳300公斤/年。</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 fade-in" style="transition-delay: 200ms;">
+                <div class="text-3xl mb-2">🌳</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">1000万公顷</h3>
+                <p class="text-slate-600 text-sm">每年消失的森林面积。选择FSC认证纸张和可持续木材产品，是关键缓冲。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 可执行行动清单 -->
+    <section id="actions" class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">四大高影响力行动</h2>
+                <p class="text-slate-600">不必面面俱到，选择1-2个适合你的坚持执行</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- 行动项 1 -->
+                <div class="group bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-500 hover:shadow-md transition cursor-pointer fade-in" onclick="toggleComplete(this)">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-slate-900 group-hover:text-emerald-700 transition">拒绝一次性塑料</h3>
+                            <p class="text-slate-600 mt-1">随身携带环保袋、水杯和餐具。重点减少吸管、塑料袋和外卖餐盒的使用。</p>
+                            <div class="mt-3 flex items-center text-sm text-emerald-600 opacity-0 group-hover:opacity-100 transition">
+                                <span class="check-icon mr-2">✓</span>
+                                <span class="check-text">标记为已承诺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 行动项 2 -->
+                <div class="group bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-500 hover:shadow-md transition cursor-pointer fade-in" onclick="toggleComplete(this)">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-slate-900 group-hover:text-emerald-700 transition">能源极简主义</h3>
+                            <p class="text-slate-600 mt-1">随手关灯，拔掉闲置电器插头（待机功耗占家庭用电5-10%），选择一级能效家电。</p>
+                            <div class="mt-3 flex items-center text-sm text-emerald-600 opacity-0 group-hover:opacity-100 transition">
+                                <span class="check-icon mr-2">✓</span>
+                                <span class="check-text">标记为已承诺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 行动项 3 -->
+                <div class="group bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-500 hover:shadow-md transition cursor-pointer fade-in" onclick="toggleComplete(this)">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-slate-900 group-hover:text-emerald-700 transition">饮食减碳</h3>
+                            <p class="text-slate-600 mt-1">减少食物浪费（计划性购买），尝试"周一无肉日"。畜牧业占全球温室气体排放14.5%。</p>
+                            <div class="mt-3 flex items-center text-sm text-emerald-600 opacity-0 group-hover:opacity-100 transition">
+                                <span class="check-icon mr-2">✓</span>
+                                <span class="check-text">标记为已承诺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 行动项 4 -->
+                <div class="group bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-500 hover:shadow-md transition cursor-pointer fade-in" onclick="toggleComplete(this)">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-slate-900 group-hover:text-emerald-700 transition">循环使用优先</h3>
+                            <p class="text-slate-600 mt-1">购买二手物品，修复而非丢弃，正确分类回收（清洁的回收物才能被有效利用）。</p>
+                            <div class="mt-3 flex items-center text-sm text-emerald-600 opacity-0 group-hover:opacity-100 transition">
+                                <span class="check-icon mr-2">✓</span>
+                                <span class="check-text">标记为已承诺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 进度指示器 -->
+            <div class="mt-8 p-4 bg-emerald-50 rounded-xl border border-emerald-200 text-center fade-in">
+                <p class="text-emerald-800 font-medium">
+                    你已承诺 <span id="commit-count" class="text-2xl font-bold text-emerald-600">0</span>/4 项行动
+                </p>
+                <p class="text-sm text-emerald-600 mt-1">每一点改变都算数</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速资源链接 -->
+    <section class="py-12 px-4 bg-slate-900 text-slate-300">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div>
+                <h4 class="text-white font-bold mb-4">深入了解</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.ipcc.ch/" target="_blank" class="hover:text-emerald-400 transition">→ IPCC 气候变化报告</a></li>
+                    <li><a href="https://www.footprintcalculator.org/" target="_blank" class="hover:text-emerald-400 transition">→ 碳足迹计算器</a></li>
+                    <li><a href="https://www.zerowasteeurope.eu/" target="_blank" class="hover:text-emerald-400 transition">→ 零废弃生活指南</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">本地行动</h4>
+                <p class="text-sm leading-relaxed">
+                    环保不是遥不可及的宏大叙事。从查看你所在城市的垃圾分类规则开始，从观察你一周的垃圾桶内容开始。数据比完美更重要。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-500 py-6 px-4 text-center text-sm">
+        <p>© 2024 环保行动指南 | 本页面为零碳静态网页，通过可再生能源托管</p>
+    </footer>
+
+    <script>
+        // 滚动显现动画
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // 承诺计数功能
+        let committedActions = new Set();
+        
+        function toggleComplete(element) {
+            const isCompleted = element.classList.contains('bg-emerald-50');
+            
+            if (isCompleted) {
+                element.classList.remove('bg-emerald-50', 'border-emerald-500');
+                element.classList.add('bg-slate-50', 'border-slate-200');
+                committedActions.delete(element);
+            } else {
+                element.classList.remove('bg-slate-50', 'border-slate-200');
+                element.classList.add('bg-emerald-50', 'border-emerald-500');
+                committedActions.add(element);
+                
+                // 简单的微交互反馈
+                element.style.transform = 'scale(0.98)';
+                setTimeout(() => element.style.transform = '', 150);
+            }
+            
+            document.getElementById('commit-count').textContent = committedActions.size;
+            
+            // 如果全部完成，简单庆祝
+            if (committedActions.size === 4) {
+                setTimeout(() => {
+                    alert('太棒了！你已为地球做出四项承诺。记住，坚持比完美更重要。');
+                }, 300);
+            }
+        }
+
+        // 深色模式切换（简单的class切换）
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            // 实际应用中这里应该保存用户偏好到localStorage
+        }
+
+        // 显示影响数据提示
+        function showImpact() {
+            const msgs = [
+                "你知道吗？如果每个人每天少用一张纸巾，一年可拯救100万棵树。",
+                "一个塑料瓶降解需要450年，而你使用它的时间可能只有几分钟。",
+                "食物浪费产生的碳排放占全球总量的8-10%。"
+            ];
+            alert(msgs[Math.floor(Math.random() * msgs.length)]);
+        }
+    </script>
+</body>
+</html>
