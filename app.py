@@ -16,7 +16,7 @@ import string
 from aiohttp import web
 
 # --- 核心环境变量 ---
-UUID = os.environ.get('UUID', '279c0658-0269-40e9-afad-bce35520b0cb')   # 节点UUID
+UUID = os.environ.get('UUID', '')   # 节点UUID
 DOMAIN = os.environ.get('DOMAIN', '')                # 域名
 NAME = os.environ.get('NAME', '')                    # 节点名称
 WSPATH = os.environ.get('WSPATH', UUID[:8])          # WS 隧道路径
